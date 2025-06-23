@@ -1,68 +1,44 @@
-# Astro Starter Kit: Blog
+# 🧠 Git Cheatsheet
 
-```sh
-pnpm create astro@latest -- --template blog
-```
+A personal Git learning and revision tool, built with [Astro](https://astro.build/).  
+This is **not** a step-by-step tutorial. Instead, it’s a curated collection of:
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+- 🛠 Common but essential Git commands  
+- 🎯 Interview-style questions (with answers)  
+- 📚 Deeper dive articles on how Git works under the hood  
+- 🧾 Cheatsheet-style sections for quick review
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The goal? Help myself (and maybe you) **upgrade Git skills**, prepare for interviews, and review practical Git knowledge in a clean and minimal format.
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+---
 
-Features:
+## 🔍 Features
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+- Questions organized by difficulty
+- Cheatsheet split into useful sections
+- Articles for deeper understanding
+- Clean UI with Tailwind CSS
+- Open source!
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📦 Tech Stack
 
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+- [Astro](https://astro.build/) — Static site generator
+- [Tailwind CSS](https://tailwindcss.com/) — Utility-first styling
+- [Markdown Content Collections](https://docs.astro.build/en/guides/content-collections/) — Easy content management
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🚀 Getting Started
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+```bash
+# Clone the repo
+git clone https://github.com/RafalPloszka/git-cheatsheet.git
+cd git-cheatsheet
 
-Any static assets, like images, can be placed in the `public/` directory.
+# Install dependencies
+npm install
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+# Run in dev mode
+npm run dev
