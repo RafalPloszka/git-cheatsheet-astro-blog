@@ -1,0 +1,45 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+import { getCollection } from "astro:content";
+
+const sections = await getCollection("cheatsheet");
+
+// Sort by order
+sections.sort((a, b) => a.data.order - b.data.order);
+---
+
+<PageLayout>
+  <div class="flex">
+    <!-- Sidebar -->
+    <aside class="w-64 sticky top-8 h-screen p-4 pr-6 border-r hidden md:block">
+      <nav class="space-y-2 text-sm">
+        {
+          sections.map((section) => (
+            <a
+              href={`#${section.slug}`}
+              class="block hover:underline text-gray-700"
+            >
+              {section.data.title}
+            </a>
+          ))
+        }
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 p-4">
+      {
+        sections.map(async (section) => {
+          const { Content } = await section.render();
+          return (
+            <section id={section.slug} class="scroll-mt-24 mb-16">
+              <h2>{section.data.title}</h2>
+              <Content />
+            </section>
+          );
+        })
+      }
+    </main>
+  </div>
+</PageLayout>
