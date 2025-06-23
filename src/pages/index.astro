@@ -1,53 +1,41 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import PageLayout from "../layouts/PageLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <h1>👋 Welcome to My Git Cheatsheet</h1>
+<PageLayout>
+  <main>
+    <h1>👋 Welcome to My Git Cheatsheet</h1>
 
-      <p>
-        I created this page to level up my Git skills — not as a step-by-step
-        tutorial, but as a curated set of slightly more advanced yet commonly
-        used Git commands.
-      </p>
+    <p>
+      I created this page to level up my Git skills — not as a step-by-step
+      tutorial, but as a curated set of slightly more advanced yet commonly used
+      Git commands.
+    </p>
 
-      <p>You'll find:</p>
-      <ul class="mb-5">
-        <li>
-          <a href="/cheatsheet">🛠️ Cheatsheet</a> for quick command reference
-        </li>
-        <li>
-          <a href="/questions">❓ Interview Questions</a> to help you revise and
-          prepare for tech interviews
-        </li>
-        <li>
-          <a href="/blog">📚 Articles</a> that dive deeper into how Git works under
-          the hood
-        </li>
-      </ul>
+    <p>You'll find:</p>
+    <ul class="mb-5">
+      <li>
+        <a href="/cheatsheet">🛠️ Cheatsheet</a> for quick command reference
+      </li>
+      <li>
+        <a href="/questions">❓ Interview Questions</a> to help you revise and prepare
+        for tech interviews
+      </li>
+      <li>
+        <a href="/blog">📚 Articles</a> that dive deeper into how Git works under
+        the hood
+      </li>
+    </ul>
 
-      <p>
-        This is an <b>open source project</b>, built with
-        <a href="https://astro.build">Astro</a> 🚀.
+    <p>
+      This is an <b>open source project</b>, built with
+      <a href="https://astro.build">Astro</a> 🚀.
 
-        <br />
-        Feel free to explore, learn, give a star on GitHub — or even contribute:
-      </p>
-      <a href="https://github.com/your-username/your-repo-name">
-        🔗 View the source on GitHub
-      </a>
-    </main>
-
-    <Footer />
-  </body>
-</html>
+      <br />
+      Feel free to explore, learn, give a star on GitHub — or even contribute:
+    </p>
+    <a href="https://github.com/RafalPloszka/git-cheatsheet-astro-blog">
+      🔗 View the source on GitHub
+    </a>
+  </main>
+</PageLayout>
