@@ -1,0 +1,54 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+import { getCollection, render } from "astro:content";
+import QuestionCard from "../components/QuestionCard.astro";
+
+// Get query param (?level=beginner)
+const levelFilter = Astro.url.searchParams.get("level");
+
+let questions = await getCollection("questions");
+
+if (levelFilter) {
+  questions = questions.filter((q) => q.data.level === levelFilter);
+}
+---
+
+<PageLayout>
+  <main class="p-12">
+    <h1 class="text-center">Interview Questions</h1>
+
+    <p>
+      A bunch of Git questions you might get in interviews or just use to test
+      yourself. Not a strict quiz — read the question, think about your answer,
+      then reveal it and see how you did.
+    </p>
+
+    <div class="my-4 text-center">
+      <span>Filter by level:</span>
+      <a href="/questions" class="mx-2 underline">All</a>
+      <a href="/questions?level=beginner" class="mx-2 underline">Beginner</a>
+      <a href="/questions?level=intermediate" class="mx-2 underline"
+        >Intermediate</a
+      >
+      <a href="/questions?level=advanced" class="mx-2 underline">Advanced</a>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      {
+        questions.map(async (q) => {
+          const { Content } = await render(q);
+          return (
+            <QuestionCard
+              title={q.data.title}
+              level={q.data.level}
+              tags={q.data.tags}
+            >
+              <Content />
+            </QuestionCard>
+          );
+        })
+      }
+    </div>
+  </main>
+</PageLayout>
